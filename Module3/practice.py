@@ -8,17 +8,23 @@
 secrect_num = 50
 
 while True:
-    input = int(input("請輸入1~100:"))
-    if input > 100 or input < 1:
-        print("超出範圍請重新輸入")
-    elif input == secrect_num:
-        print("恭喜中獎")
-        break
-    elif input < secrect_num:
-        print("請輸入更大的數字")
-    else :
-        print("請輸入更小的數字")
-    
+    try:
+        user_input = int(input("請輸入1~100:"))
+    except ValueError :
+        print("請輸入數字1~100")
+    else:
+        if user_input > 100 or user_input < 1:
+            print("超出範圍請重新輸入")
+        elif user_input == secrect_num:
+            print("恭喜中獎")
+            break
+        elif user_input < secrect_num:
+            print("請輸入更大的數字")
+        else :
+            print("請輸入更小的數字")
+
+
+
 
     
 
